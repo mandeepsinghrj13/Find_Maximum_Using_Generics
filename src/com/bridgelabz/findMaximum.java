@@ -1,24 +1,32 @@
 package com.bridgelabz;
-public class findMaximum 
+public class findMaximum<T extends Comparable> 
 {
+	 T a, b ,c;
+	
+	public findMaximum(T a,T b,T c) 
+	{
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
 	public static void main(String[] args) 
 	{		
 		System.out.println("Welcome to maximum generics problems");
-        Float x = 2.3f;
-        Float y = 7.8f;
-        Float z = 6.7f;
-        String a = "apple";
-		String b = "peach";
-		String c = "banana";
-        Integer d = 20;
-        Integer e = 42; 
-        Integer m = 65;
+        Float x = 2.3f, y = 7.8f, z = 6.7f;
+        String p = "apple", q = "peach", r = "banana";
+        Integer m = 20, n = 42, o = 65;
         
-		findMaximum.biggesOfThree (a,b,c);
-		findMaximum.biggesOfThree (x,y,z);
-		findMaximum.biggesOfThree (d,e,m);
+		new findMaximum(p,q,r).max();
+		new findMaximum(x,y,z).max();
+		new findMaximum(o,n,m).max();
 
 	}
+	private void max() 
+	{
+		findMaximum.biggesOfThree(a,b,c);
+	}
+	
+	
 	
 	 
 	private static <T extends Comparable> void biggesOfThree(T a, T b, T c)
@@ -34,7 +42,4 @@ public class findMaximum
 		System.out.println("Maximum Number Is " + max);
 
 	}
-	
-	
-
 }
